@@ -26,3 +26,20 @@
 
 // Note:
 // If you are given an array with multiple answers, return the lowest correct index.
+
+function findEvenIndex(arr){
+    let array = arr,
+        valor = -1;
+
+        for(let i = -1; i < arr.length; i++){
+            let left = arr.slice(0,i+1).reduce((acc,c)=> acc + c, 0 )
+            let right= arr.slice(i+2 ,arr.length).reduce((acc,c)=> acc + c, 0 )
+            if(left === right) 
+            valor = i+1 
+            i = arr.length 
+        }
+
+    return valor
+}
+
+findEvenIndex([20,10,-80,10,10,15,35] )
